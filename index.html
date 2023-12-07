@@ -11,19 +11,24 @@
     background-color: rgb(122, 122, 122);
 }
 .buttonimg {
-    height: 150px;
+    height: 200px;
 }
 .score {
     height: 10rem;
     width: 10rem;
     font-size: 40px;
-    padding-left: 9rem;
+}
+.main {
+    text-align: center; 
 }
     </style>
 </head<body>
-<button onclick="add()" class="button"><img src="image.png" class="buttonimg"></button>
-<br>
-<p id="score" class="score"></p>
+<div class="main">
+    <button onclick="add()" class="button"><img src="image.png" class="buttonimg"></button>
+    <br>
+    <center><p id="score" class="score"></p></center>
+    <button onclick="bypass()">Dev Bypass</button>
+</div>
 <script src="index.js"></script>
 </body>
 </html>

@@ -1,11 +1,11 @@
-let x = 0;
+let score = 0;
 
+window.onload = function () {
+    score = localStorage.getItem("score") ? parseInt(localStorage.getItem("score")): 0 
+    document.getElementById("score").innerHTML = (score);
+}
 function add(){
-    x++;
-    document.getElementById("score").innerHTML = (x);
-    if (x == 10) {
-        alert("Test Store");
-    } else if (x == 100) {
-        f
-    }
+    score++;
+    document.getElementById("score").innerHTML = (score);
+    localStorage.setItem("score", score.toString());
 }

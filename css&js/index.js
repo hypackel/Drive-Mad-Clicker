@@ -6,10 +6,10 @@ window.onload = function () {
     toohigh();
 }
 function add(){
-    score++;
-    document.getElementById("score").innerHTML = (score);
-    localStorage.setItem("score", score.toString());
-    toohigh();
+        score++;
+        document.getElementById("score").innerHTML = (score);
+        localStorage.setItem("score", score.toString());
+        toohigh();
 }
 let pin 
 function bypass() {
@@ -26,10 +26,9 @@ function bypass() {
         toohigh()
     }
 }
-
 // anticheat function
 function toohigh() {
-    if (score >= 100000000000000000000000000000000000000) {
+    if (score >= 10000000000000000000000000000) {
        alert("Cheater!");
        score = 0;
        document.getElementById("score").innerHTML = (score);

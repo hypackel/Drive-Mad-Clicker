@@ -11,24 +11,26 @@ function add(){
     localStorage.setItem("score", score.toString());
     toohigh();
 }
-let pin
+let pin 
 function bypass() {
     let pin = prompt("What is the pin?");
     if (pin == 1234) {
         score = prompt("What do you want your score to be?");
         document.getElementById("score").innerHTML = (score);
         localStorage.setItem("score", score.toString());
+        toohigh()
     } else {
         alert("No cheating!");
         score = 1
         document.getElementById("score").innerHTML = (score);
+        toohigh()
     }
 }
 
-//anticheat function
+// anticheat function
 function toohigh() {
     if (score >= 100000000000000000000000000000000000000) {
-       alert("Did you cheat?");
+       alert("Cheater!");
        score = 0;
        document.getElementById("score").innerHTML = (score);
        localStorage.setItem("score", score.toString());

@@ -19,7 +19,7 @@ body {
 .buttonimg {
     height: 200px;
 }
-.score {
+.scorebox {
     height: 10rem;
     width: 10rem;
     font-size: 40px;
@@ -27,15 +27,34 @@ body {
 .main {
     text-align: center; 
 }
+.upgrade {
+    font-size: 25px;
+}
     </style>
 </head<body>
 <div class="main">
     <br>
     <button onclick="add()" class="button"><img src="image.png" class="buttonimg"></button>
     <br>
-    <center><p id="score" class="score"></p></center>
-    <button class="btn btn-danger rounded-pill px-3" onclick="bypass()">Dev Bypass</button>
+    <center><p id="score" class="scorebox"></p></center>
+<button class="btn btn-danger rounded-pill px-3" onclick="document.getElementById('id01').style.display='block'">Info/Dev Options</button>
+
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'"class="close" title="Close Modal">&times;</span>
+  <button class="btn btn-danger rounded-pill px-3" onclick="bypass()">Dev Bypass</button>
+  <button class="btn btn-danger rounded-pill px-3" onclick="test()">Dev Info</button>
+  <button class="btn btn-danger rounded-pill px-3" onclick="reset()">Dev Reset</button>
+</div>
 </div>
 <script src="css&js/index.js"></script>
+<script>
+    var modal = document.getElementById('id01');
+    
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+    </script>
 </body>
 </html>

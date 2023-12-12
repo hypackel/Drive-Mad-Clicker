@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drive Mad Clicker</title>
+    <link rel="stylesheet" href="css&js/bootstrap.min.css">
+    <link rel="stylesheet" href="css&js/css.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
     <style>
+body {
+    background-color: rgb(145, 145, 145);
+}
 .button {
     height: 15rem;
     width: 20rem;
@@ -24,11 +30,12 @@
     </style>
 </head<body>
 <div class="main">
+    <br>
     <button onclick="add()" class="button"><img src="image.png" class="buttonimg"></button>
     <br>
     <center><p id="score" class="score"></p></center>
-    <button onclick="bypass()">Dev Bypass</button>
+    <button class="btn btn-danger rounded-pill px-3" onclick="bypass()">Dev Bypass</button>
 </div>
-<script src="index.js"></script>
+<script src="css&js/index.js"></script>
 </body>
 </html>

@@ -7,36 +7,6 @@
     <title>Drive Mad Clicker</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/css.css">
-    <style>
-        body {
-            background-color: rgb(145, 145, 145);
-        }
-
-        .button {
-            height: 15rem;
-            width: 20rem;
-            background-color: rgb(122, 122, 122);
-        }
-
-        .buttonimg {
-            height: 200px;
-        }
-
-        .scorebox {
-            height: 10rem;
-            width: 10rem;
-            font-size: 40px;
-        }
-
-        .main {
-            text-align: center;
-        }
-
-        .upgrade {
-            font-size: 25px;
-            text-align: left;
-        }
-    </style>
     </head<body>
     <div class="main" id="test2" tabindex="0">
         <br>
@@ -45,17 +15,23 @@
         <center>
             <p id="score" class="scorebox"></p>
         </center>
-        <center><button class="btn btn-primary rounded-pill px-3"
-                onclick="document.getElementById('id01').style.display='block'">Shop/Stats</button></center>
+        <center><button class="btn btn-primary rounded-pill px-3" id="work"
+                onclick="document.getElementById('id01').style.display='block'">Shop</button></center>
         <div id="id01" class="modal" style="text-align: center;">
             <div class="modal-content">
                 <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-                <button style="width: 30vw;" class="btn btn-primary" onclick="reset()">Reset</button>
-                <button style="width: 30vw;" class="btn btn-primary" onclick="upgrade1()">Buy a Upgrade</button>
                 <br>
-                <center><button style="width: 30vw;" class="text-center btn btn-warning">Buy Premium ONLY <span style="font-size: 3vh;color: red; "> $2.99</span></button></center>
+                <center>
+                    <button style="width: 30vw;" class="btn btn-primary" onclick="reset()">Reset (Warning Resets your Game)</button>
+                </center>
                 <br>
-                <p class="scorebox" id="upgradeview">Test</p>
+                <center>
+                    <button style="width: 30vw;" class="btn btn-secondary" onclick="upgrade1()">Buy a Upgrade (100 Units)</button>
+                </center>
+                <br>
+                <center><button style="width: 30vw;" class="text-center btn btn-warning" onclick="htm()">Buy Premium ONLY <span style="font-size: 3vh;color: red; "> $2.99</span></button></center>
+                <p class="mumbojumbo">Not Including Tax, and Other Fees</p>
+                <p class="scorebox" id="upgradeview"></p>
             </div>
         </div>
     </div>

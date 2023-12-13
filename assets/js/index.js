@@ -9,6 +9,7 @@ function onCheat(newVal) {
     }
 }
 window.onload = function () {
+    upgrade = localStorage.getItem("upgrade") ? parseInt(localStorage.getItem("upgrade")): 0;
     score = localStorage.getItem("score") ? parseInt(localStorage.getItem("score")): 0;
     cheat = localStorage.getItem("cheat") ? parseInt(localStorage.getItem("cheat")): 0;
     // onCheat(cheat)
@@ -26,8 +27,8 @@ function add(){
         document.getElementById("score").innerHTML = (score);
         localStorage.setItem("score", score.toString());
         toohigh();
-        checker();
         document.getElementById("test2").focus()
+        win();
 }
 let pin 
 function bypass() {
@@ -42,27 +43,29 @@ function bypass() {
         score = 1;
         upgrade = 1;
         document.getElementById("score").innerHTML = (score);
-        stop2 = 1
-        stop1 = 1
+        // stop2 = 1
+        // stop1 = 1
     }
 }
 // anticheat functions
 function toohigh() {
-    if (score >= 10000) {
+    if (score >= 1000000) {
        alert("Cheater!");
-       score = 0;
+       score = upgrade;
        upgrade = 1;
        document.getElementById("score").innerHTML = (score);
        localStorage.setItem("score", score.toString());
     }
 }
+//reset function
 function reset() {
     score = 1;
     upgrade = 1;
     localStorage.setItem("score", score.toString());
     document.getElementById("score").innerHTML = (score);
-    stop2 = 1
-    stop1 = 1
+    localStorage.setItem("upgrade", upgrade.toString());
+    // stop2 = 1
+    // stop1 = 1
 }
 // Upgrade Stuff
 function test() {
@@ -74,6 +77,21 @@ function upgrade1() {
         document.getElementById("score").innerHTML = (score);
         localStorage.setItem("score", score.toString());
         upgrade++;
+        localStorage.setItem("upgrade", upgrade.toString());
     }
 }
-//Ect
+//End goal/Win Condition
+function win() {
+    if (score >= 200000) {
+       alert("You Won!");
+       upgrade = 1;
+       localStorage.setItem("upgrade", upgrade.toString());
+       document.getElementById("score").innerHTML = (score);
+       localStorage.setItem("score", score.toString());
+       reset()
+    }
+}
+//other
+function htm() {
+    alert("Coming Soon")
+}

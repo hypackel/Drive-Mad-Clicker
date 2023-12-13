@@ -103,4 +103,39 @@
   font-size: 35px;
   font-weight: bold;
 }
+body {
+  background-color: rgb(145, 145, 145);
+}
 
+.button {
+  height: 15rem;
+  width: 20rem;
+  background-color: rgb(122, 122, 122);
+}
+
+.buttonimg {
+  height: 200px;
+}
+
+.scorebox {
+  height: 10rem;
+  width: 10rem;
+  font-size: 40px;
+}
+
+.main {
+  text-align: center;
+}
+
+.upgrade {
+  font-size: 25px;
+  text-align: left;
+}
+.mumbojumbo {
+  text-align: center;
+  font-size: 5px;
+  padding-top: 2px;
+}
+#work {
+  width: 8rem;
+}

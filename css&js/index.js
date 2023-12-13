@@ -33,7 +33,7 @@ function bypass() {
 }
 // anticheat functions
 function toohigh() {
-    if (score >= 100000000000000000000000) {
+    if (score >= 10000) {
        alert("Cheater!");
        score = 0;
        upgrade = 1;
@@ -55,6 +55,8 @@ function test() {
 }
 let stop1 = 1
 let stop2 = 1
+let stop3 = 1
+let stop4 = 1
 function work() {
     if (score >= 50) {
         if (stop1 == 1) {
@@ -66,6 +68,18 @@ function work() {
         if (stop2 == 1) {
             upgrade++;
             stop2++;
+        }
+    }
+    if (score >= 150) {
+        if (stop3 == 1) {
+            upgrade++;
+            stop3++;
+        }
+    }
+    if (score >= 200) {
+        if (stop4 == 1) {
+            upgrade++;
+            stop4++;
         }
     }
 }

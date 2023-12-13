@@ -1,3 +1,3 @@
 # Drive-Mad-Clicker
 
-almost close to close to done
+Welcome to a knockoff version of drive mad. You know 

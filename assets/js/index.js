@@ -1,18 +1,33 @@
 let score = 0;
 let upgrade = 1;
-
+let cheat = -1;
+function onCheat(newVal) {
+    cheat = newVal
+    localStorage.setItem("cheat", cheat.toString())
+    if (cheat > 2) {
+        window.location.href = "/locker.html"
+    }
+}
 window.onload = function () {
     score = localStorage.getItem("score") ? parseInt(localStorage.getItem("score")): 0;
+    cheat = localStorage.getItem("cheat") ? parseInt(localStorage.getItem("cheat")): 0;
+    // onCheat(cheat)
     document.getElementById("score").innerHTML = (score);
     toohigh();
+    document.addEventListener("keydown", (e) => {
+        if (e.key.toLowerCase() == "enter") {
+            alert("Stop cheating")
+            onCheat(cheat + 1)
+        }
+    })
 }
 function add(){
         score+=upgrade;
         document.getElementById("score").innerHTML = (score);
         localStorage.setItem("score", score.toString());
         toohigh();
-        work();
         checker();
+        document.getElementById("test2").focus()
 }
 let pin 
 function bypass() {
@@ -53,33 +68,12 @@ function reset() {
 function test() {
     alert(upgrade);
 }
-let stop1 = 1
-let stop2 = 1
-let stop3 = 1
-let stop4 = 1
-function work() {
-    if (score >= 50) {
-        if (stop1 == 1) {
-            upgrade++;
-            stop1++;
-        }
-    }
+function upgrade1() {
     if (score >= 100) {
-        if (stop2 == 1) {
-            upgrade++;
-            stop2++;
-        }
-    }
-    if (score >= 150) {
-        if (stop3 == 1) {
-            upgrade++;
-            stop3++;
-        }
-    }
-    if (score >= 200) {
-        if (stop4 == 1) {
-            upgrade++;
-            stop4++;
-        }
+        score -= 100;
+        document.getElementById("score").innerHTML = (score);
+        localStorage.setItem("score", score.toString());
+        upgrade++;
     }
 }
+//Ect

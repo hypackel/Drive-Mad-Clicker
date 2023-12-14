@@ -10,7 +10,7 @@
     </head<body>
     <div class="main" id="test2" tabindex="0">
         <br>
-        <button onclick="add()" class="button"><img src="assets/img/image.png" class="buttonimg"></button>
+        <button onclick="add()" id="click" class="button"><img src="assets/img/image.png" class="buttonimg"></button>
         <br>
         <center>
             <p id="score" class="scorebox"></p>
@@ -29,12 +29,17 @@
                     <button style="width: 30vw;" class="btn btn-secondary" onclick="upgrade1()">Buy a Upgrade (100 Units)</button>
                 </center>
                 <br>
+                <center>
+                    <button style="width: 30vw;" class="btn btn-secondary" onclick="autobuy()">Buy a Autoclicker (1000 Units)</button>
+                </center>
+                <br>
                 <center><button style="width: 30vw;" class="text-center btn btn-warning" onclick="htm()">Buy Premium ONLY <span style="font-size: 3vh;color: red; "> $2.99</span></button></center>
                 <p class="mumbojumbo">Not Including Tax, and Other Fees</p>
                 <p class="scorebox" id="upgradeview"></p>
             </div>
         </div>
     </div>
+
     <script src="assets/js/index.js"></script>
     <script>
         var modal = document.getElementById('id01');

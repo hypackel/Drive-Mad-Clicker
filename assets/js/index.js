@@ -4,11 +4,13 @@ let cheat = -1;
 function onCheat(newVal) {
     cheat = newVal
     localStorage.setItem("cheat", cheat.toString())
-    if (cheat > 2) {
+    if (cheat > 5) {
         window.location.href = "/locker.html"
     }
 }
 window.onload = function () {
+    autocheck = localStorage.getItem("autocheck") ? parseInt(localStorage.getItem("autocheck")) : 0;
+    start = localStorage.getItem("start") ? parseInt(localStorage.getItem("start")) : 0;
     autou = localStorage.getItem("autou") ? parseInt(localStorage.getItem("autou")) : 0;
     autoclick = localStorage.getItem("autoclick") ? parseInt(localStorage.getItem("autoclick")) : 0;
     upgrade = localStorage.getItem("upgrade") ? parseInt(localStorage.getItem("upgrade")) : 0;
@@ -24,6 +26,14 @@ window.onload = function () {
             onCheat(cheat + 1)
         }
     })
+    if (autocheck == 0) {
+        stop();
+        console.log("Test 1");
+        localStorage.setItem("autocheck", autocheck.toString());
+    } else if (autocheck == 1) {
+        console.log("Test 2");
+        localStorage.setItem("autocheck", autocheck.toString());
+    }
 }
 function add() {
     score += upgrade;
@@ -71,6 +81,8 @@ function reset() {
     localStorage.setItem("score", score.toString());
     document.getElementById("score").innerHTML = (score);
     localStorage.setItem("upgrade", upgrade.toString());
+    stop();
+    autostop == 1;
 }
 // Upgrade Stuff
 function test() {
@@ -100,37 +112,52 @@ function htm() {
     alert("Coming Soon")
 }
 //autoclicker stuff
-let autoclick = 0;
 let autou = 1;
-function autobuy() {
-    if (score >= 1000) {
-        score -= 1000;
-        autoclick++;
-        document.getElementById("score").innerHTML = (score);
-        localStorage.setItem("score", score.toString());
-        auto();
-        localStorage.setItem("autoclick", autoclick.toString());
+// function autobuy() {
+//     if (score >= 1000) {
+//         score -= 1000;
+//         autoclick++;
+//         document.getElementById("score").innerHTML = (score);
+//         localStorage.setItem("score", score.toString());
+//         auto();
+//         localStorage.setItem("autoclick", autoclick.toString());
+//         autostop == 2;
+//     }
+// }
+let autocheck = 0;
+function abuy() {
+    if (Score >= 1000) {
+        if (autocheck == 0) {
+            auto();
+            score -= 1000;
+            autocheck++;
+            localStorage.setItem("autocheck", autocheck.toString());
+        } else {
+            alert("You can only buy this once");
+        }
     }
 }
 function autoupgrade() {
-    if (score >= 10) {
-        score -= 10;
+    if (score >= 10000) {
+        score -= 10000;
         autou++;
         document.getElementById("score").innerHTML = (score);
         localStorage.setItem("score", score.toString());
         localStorage.setItem("autou", autou.toString());
     }
 }
+let autostop = 1;
 
 function clicker() {
     score += autou;
     document.getElementById("score").innerHTML = (score);
     localStorage.setItem("score", score.toString());
-    localStorage.setItem("autoclick", autoclick.toString());
     localStorage.setItem("autou", autou.toString());
 }
 function auto() {
-    if (autoclick >= 1) {
-        setInterval(clicker, 1000);
-    }
+    autoint = setInterval(clicker, 1000);
+}
+
+function stop() {
+    clearInterval(autoint);
 }

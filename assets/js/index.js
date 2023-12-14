@@ -126,7 +126,7 @@ let autou = 1;
 // }
 let autocheck = 0;
 function abuy() {
-    if (Score >= 1000) {
+    if (score >= 1000) {
         if (autocheck == 0) {
             auto();
             score -= 1000;

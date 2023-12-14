@@ -9,6 +9,7 @@ function onCheat(newVal) {
     }
 }
 window.onload = function () {
+    autou = localStorage.getItem("autou") ? parseInt(localStorage.getItem("autou")) : 0;
     autoclick = localStorage.getItem("autoclick") ? parseInt(localStorage.getItem("autoclick")) : 0;
     upgrade = localStorage.getItem("upgrade") ? parseInt(localStorage.getItem("upgrade")) : 0;
     score = localStorage.getItem("score") ? parseInt(localStorage.getItem("score")) : 0;
@@ -63,11 +64,13 @@ function toohigh() {
 function reset() {
     score = 1;
     upgrade = 1;
+    autoclick = 1;
+    autou = 1;
+    localStorage.setItem("autou", autou.toString());
+    localStorage.setItem("autoclick", autoclick.toString());
     localStorage.setItem("score", score.toString());
     document.getElementById("score").innerHTML = (score);
     localStorage.setItem("upgrade", upgrade.toString());
-    // stop2 = 1
-    // stop1 = 1
 }
 // Upgrade Stuff
 function test() {
@@ -83,22 +86,22 @@ function upgrade1() {
     }
 }
 //End goal/Win Condition
-// function win() {
-//     if (score >= 200000) {
-//         alert("You Won!");
-//         upgrade = 1;
-//         localStorage.setItem("upgrade", upgrade.toString());
-//         document.getElementById("score").innerHTML = (score);
-//         localStorage.setItem("score", score.toString());
-//         reset()
-//     }
-// }
+function win() {
+    if (score >= 200000) {
+        alert("You Won!");
+        upgrade = 1;
+        localStorage.setItem("upgrade", upgrade.toString());
+        document.getElementById("score").innerHTML = (score);
+        localStorage.setItem("score", score.toString());
+    }
+}
 //other
 function htm() {
     alert("Coming Soon")
 }
 //autoclicker stuff
-let autoclick = 0
+let autoclick = 0;
+let autou = 1;
 function autobuy() {
     if (score >= 1000) {
         score -= 1000;
@@ -109,14 +112,23 @@ function autobuy() {
         localStorage.setItem("autoclick", autoclick.toString());
     }
 }
+function autoupgrade() {
+    if (score >= 10) {
+        score -= 10;
+        autou++;
+        document.getElementById("score").innerHTML = (score);
+        localStorage.setItem("score", score.toString());
+        localStorage.setItem("autou", autou.toString());
+    }
+}
 
 function clicker() {
-    score++;
+    score += autou;
     document.getElementById("score").innerHTML = (score);
     localStorage.setItem("score", score.toString());
     localStorage.setItem("autoclick", autoclick.toString());
+    localStorage.setItem("autou", autou.toString());
 }
-
 function auto() {
     if (autoclick >= 1) {
         setInterval(clicker, 1000);

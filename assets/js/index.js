@@ -24,7 +24,7 @@ window.onload = function () {
         }
     })
     autostopwork();
-    achevement();
+    // achevement();
 }
 function autostopwork() {
     if (autocheck == 0) {
@@ -43,7 +43,7 @@ function add() {
     document.getElementById("test2").focus()
     toohigh();
     win();
-    achevement();
+    // achevement();
 }
 let pin
 function bypass() {
@@ -106,11 +106,10 @@ function upgrade1() {
 function win() {
     if (score >= 500000) {
         alert("You Won!");
+        score -= upgrade;
         localStorage.setItem("upgrade", upgrade.toString());
         document.getElementById("score").innerHTML = (score);
         localStorage.setItem("score", score.toString());
-        stop();
-        reset();
     }
 }
 //other

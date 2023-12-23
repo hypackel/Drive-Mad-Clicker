@@ -1,3 +1,3 @@
 # Drive-Mad-Clicker
 
-Welcome to a knockoff version of drive mad. You know 
+Cookie Clicker + Drive Mad but Worse

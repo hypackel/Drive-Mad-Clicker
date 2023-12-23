@@ -5,8 +5,13 @@ function onCheat(newVal) {
     cheat = newVal
     localStorage.setItem("cheat", cheat.toString())
     if (cheat > 5) {
-        window.location.href = "/locker.html"
+        cheater();
     }
+}
+function cheater() {
+    do {
+        
+    } while (cheat > 50);
 }
 window.onload = function () {
     autocheck = localStorage.getItem("autocheck") ? parseInt(localStorage.getItem("autocheck")) : 0;

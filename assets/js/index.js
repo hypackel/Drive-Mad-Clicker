@@ -24,6 +24,7 @@ window.onload = function () {
         }
     })
     autostopwork();
+    achevement();
 }
 function autostopwork() {
     if (autocheck == 0) {
@@ -42,6 +43,7 @@ function add() {
     toohigh();
     document.getElementById("test2").focus()
     win();
+    achevement();
 }
 let pin
 function bypass() {

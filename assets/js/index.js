@@ -8,11 +8,11 @@ function onCheat(newVal) {
         cheater();
     }
 }
-function cheater() {
-    do {
+// function cheater() {
+//     do {
         
-    } while (cheat > 50);
-}
+//     } while (cheat > 50);
+// }
 window.onload = function () {
     autocheck = localStorage.getItem("autocheck") ? parseInt(localStorage.getItem("autocheck")) : 0;
     start = localStorage.getItem("start") ? parseInt(localStorage.getItem("start")) : 0;

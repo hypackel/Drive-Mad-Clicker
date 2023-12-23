@@ -4,15 +4,7 @@ let cheat = -1;
 function onCheat(newVal) {
     cheat = newVal
     localStorage.setItem("cheat", cheat.toString())
-    if (cheat > 5) {
-        cheater();
-    }
 }
-// function cheater() {
-//     do {
-        
-//     } while (cheat > 50);
-// }
 window.onload = function () {
     autocheck = localStorage.getItem("autocheck") ? parseInt(localStorage.getItem("autocheck")) : 0;
     start = localStorage.getItem("start") ? parseInt(localStorage.getItem("start")) : 0;
@@ -31,6 +23,9 @@ window.onload = function () {
             onCheat(cheat + 1)
         }
     })
+    autostopwork();
+}
+function autostopwork() {
     if (autocheck == 0) {
         stop();
         console.log("Test 1");
@@ -87,7 +82,10 @@ function reset() {
     document.getElementById("score").innerHTML = (score);
     localStorage.setItem("upgrade", upgrade.toString());
     stop();
-    autostop == 1;
+    autostop = 1;
+    autocheck = 0;
+    localStorage.setItem("autocheck", autocheck.toString());
+
 }
 // Upgrade Stuff
 function test() {
@@ -110,6 +108,8 @@ function win() {
         localStorage.setItem("upgrade", upgrade.toString());
         document.getElementById("score").innerHTML = (score);
         localStorage.setItem("score", score.toString());
+        stop();
+        reset();
     }
 }
 //other

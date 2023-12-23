@@ -40,8 +40,8 @@ function add() {
     score += upgrade;
     document.getElementById("score").innerHTML = (score);
     localStorage.setItem("score", score.toString());
-    toohigh();
     document.getElementById("test2").focus()
+    toohigh();
     win();
     achevement();
 }
@@ -104,9 +104,8 @@ function upgrade1() {
 }
 //End goal/Win Condition
 function win() {
-    if (score >= 200000) {
+    if (score >= 500000) {
         alert("You Won!");
-        upgrade = 1;
         localStorage.setItem("upgrade", upgrade.toString());
         document.getElementById("score").innerHTML = (score);
         localStorage.setItem("score", score.toString());

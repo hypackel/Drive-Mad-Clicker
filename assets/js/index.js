@@ -144,8 +144,10 @@ function abuy() {
             score -= 1000;
             autocheck++;
             localStorage.setItem("autocheck", autocheck.toString());
+            Achevements();
         } else {
             alert("You can only buy this once");
+            Achevements();
         }
     }
 }

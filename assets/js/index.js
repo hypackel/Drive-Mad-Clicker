@@ -6,6 +6,8 @@ function onCheat(newVal) {
     localStorage.setItem("cheat", cheat.toString())
 }
 window.onload = function () {
+    acheve2 = localStorage.getItem("acheve2") ? parseInt(localStorage.getItem("acheve2")) : 0;
+    acheve1 = localStorage.getItem("acheve1") ? parseInt(localStorage.getItem("acheve1")) : 0;
     autocheck = localStorage.getItem("autocheck") ? parseInt(localStorage.getItem("autocheck")) : 0;
     start = localStorage.getItem("start") ? parseInt(localStorage.getItem("start")) : 0;
     autou = localStorage.getItem("autou") ? parseInt(localStorage.getItem("autou")) : 0;
@@ -43,7 +45,7 @@ function add() {
     document.getElementById("test2").focus()
     toohigh();
     win();
-    // achevement();
+    Achevements();
 }
 let pin
 function bypass() {
@@ -74,16 +76,21 @@ function toohigh() {
 }
 //reset function
 function reset() {
+    acheve1 = 1;
+    acheve2 = 1;
     score = 1;
     upgrade = 1;
     autoclick = 1;
     autou = 1;
+    localStorage.setItem("acheve2", acheve2.toString());
+    localStorage.setItem("acheve1", acheve1.toString());
     localStorage.setItem("autou", autou.toString());
     localStorage.setItem("autoclick", autoclick.toString());
     localStorage.setItem("score", score.toString());
     document.getElementById("score").innerHTML = (score);
     localStorage.setItem("upgrade", upgrade.toString());
     stop();
+    console.log("Game Reset");
     autostop = 1;
     autocheck = 0;
     localStorage.setItem("autocheck", autocheck.toString());
@@ -165,4 +172,58 @@ function auto() {
 
 function stop() {
     clearInterval(autoint);
+}
+
+//Alert/Achevement System
+let acheve1 = 1;
+let acheve2 = 1;
+
+function Achevements() {
+    Acheve1();
+    Acheve2();
+}
+
+function Acheve1() {
+    if (score >= 1000) {
+        if (acheve1 == 1) {
+            showAlert();
+            document.getElementById("alert-content").innerHTML = ("Achevement Gained: 1000 Clicks");
+            score += 100;
+            document.getElementById("score").innerHTML = (score);
+            localStorage.setItem("score", score.toString());
+            acheve1 += 1;
+            localStorage.setItem("acheve1", acheve1.toString());
+            console.log("Achevement 1 gained");
+        }
+    }
+}
+function Acheve2() {
+    if (autocheck >= 1) {
+        if (acheve2 == 1) {
+            showAlert();
+            document.getElementById("alert-content").innerHTML = ("Achevement Gained: Buy an Autoclicker");
+            score += 100;
+            document.getElementById("score").innerHTML = (score);
+            localStorage.setItem("score", score.toString());
+            acheve2 += 1;
+            localStorage.setItem("acheve2", acheve2.toString());
+            console.log("Achevement 2 gained");
+        }
+    }
+}
+function showAlert() {
+    var modal = document.getElementById('customAlert');
+    modal.style.display = 'block';
+}
+
+function closeAlert() {
+    var modal = document.getElementById('customAlert');
+    modal.style.display = 'none';
+}
+
+window.onclick = function(event) {
+    var modal = document.getElementById('customAlert');
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
 }

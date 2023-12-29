@@ -7,7 +7,14 @@
     <title>Drive Mad Clicker</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/css.css">
-    </head<body>
+    </head>
+    <body>
+        <div id="customAlert" class="alert">
+            <div class="alert-content">
+                <span class="close" onclick="closeAlert()">&times;</span>
+                <h3 id="alert-content"></h3>
+            </div>
+        </div>
     <div class="main" id="test2" tabindex="0">
         <br>
         <button onclick="add()" id="click" class="button"><img src="assets/img/image.png" class="buttonimg"></button>
@@ -22,7 +29,6 @@
                 <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
                <center> <div class="tab">
                 <button class="tablinks" onclick="openitem(event, 'Store')">Store</button>
-                <button class="tablinks" onclick="openitem(event, 'Achevements')">Achevements</button>
                 <button class="tablinks" onclick="openitem(event, 'Credits')">Credits</button>
               </div>
             </center>
@@ -47,19 +53,6 @@
                     <center><button style="width: 30vw;" class="text-center btn btn-warning" onclick="htm()">Buy Premium ONLY <span style="font-size: 3vh;color: red; "> $2.99</span></button></center>
                     <p class="mumbojumbo">Not Including Tax, and Other Fees</p>
                     <hr>
-                  </div>
-                  
-                  <div id="Achevements" class="tabcontent">
-                    <h3>Achevements</h3>
-                    <p>Nothing Yet</p>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
                   </div>
                   
                   <div id="Credits" class="tabcontent">

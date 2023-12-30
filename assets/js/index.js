@@ -144,10 +144,8 @@ function abuy() {
             score -= 1000;
             autocheck++;
             localStorage.setItem("autocheck", autocheck.toString());
-            Achevements();
         } else {
             alert("You can only buy this once");
-            Achevements();
         }
     }
 }
@@ -213,6 +211,22 @@ function Acheve2() {
         }
     }
 }
+
+// function settings()
+// {
+//  var ddl = document.getElementById("difficulty");
+//  var selectedValue = ddl.options[ddl.selectedIndex].value;
+//     if (selectedValue == "Normal")
+//    {
+//     alert("Normal");
+//    } else if (selectedValue == "Easy") {
+//     alert("Easy");
+//    } else if (selectedValue == "Hard") {
+//     alert("Hard");
+//    }
+// }
+
+//No Idea
 function showAlert() {
     var modal = document.getElementById('customAlert');
     modal.style.display = 'block';

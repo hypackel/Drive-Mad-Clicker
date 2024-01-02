@@ -243,3 +243,22 @@ window.onclick = function(event) {
         modal.style.display = 'none';
     }
 }
+let pinthingy
+function devtest() {
+    if (pinthingy == 1234) {
+        devwork();
+    } else {
+        pinthingy = prompt("What is the Pin?");
+        devwork();
+    }
+}
+
+function devwork() {
+    if (pinthingy == 1234) {
+        score += 10000;
+        document.getElementById("score").innerHTML = (score);
+        localStorage.setItem("score", score.toString());
+    } else {
+        alert("Try Again");
+    }
+}

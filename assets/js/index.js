@@ -52,57 +52,6 @@ function add() {
 //     alert("You have " + (score) + " points!");
 // }
 
-// const TARGET_FPS = 30;
-
-// function fpsCounter() {
-
-//   // Track frames and time
-//   let frames = 0;
-//   let currentTime = Date.now();
-//   let previousTime = currentTime;
-
-//   // Update on each frame
-//   function update() {
-
-//     let currentTime = Date.now();
-//     let elapsed = currentTime - previousTime;
-
-//     if(elapsed < 1000/TARGET_FPS) {
-//       return;
-//     }
-
-//     // Get current time
-//     currentTime = Date.now();
-
-//     // Calculate delta time
-//     let deltaTime = currentTime - previousTime;
-
-//     // Update previous time for next frame
-//     previousTime = currentTime;
-
-//     // Increment frames count
-//     frames++;
-
-//     // Calculate FPS
-//     let fps = 1000 / deltaTime;
-
-//     // Log/show FPS
-//     console.log(fps);
-//     document.getElementById("fps").innerHTML = (fps);
-
-//     // Request next frame
-//     requestAnimationFrame(update, 1000/30);
-
-//   }
-
-//   // Start counting
-//   update();
-
-// }
-
-  
-// // Start FPS counter
-// fpsCounter();
 
 
 let pin

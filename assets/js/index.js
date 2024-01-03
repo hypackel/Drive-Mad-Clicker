@@ -1,4 +1,4 @@
-let score = 0;
+let score = 1;
 let upgrade = 1;
 let cheat = -1;
 function onCheat(newVal) {

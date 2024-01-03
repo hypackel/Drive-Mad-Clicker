@@ -1,7 +1,7 @@
 <?php
     try{
         require '../vendor/autoload.php'; // include Composer's autoloader
-        $m = new MongoDB\Client("_______YOUR_MONGODB_STRING_______");
+        $m = new MongoDB\Client("mongodb+srv://1712696:SPace1234@dmc.rpucibf.mongodb.net/?retryWrites=true&w=majority");
      //echo "Connection to database Successfull!";echo"<br />";
 
     $db = $m->loginreg;

@@ -27,6 +27,7 @@ window.onload = function () {
     })
     autostopwork();
     // achevement();
+    updateFPS();
 }
 function autostopwork() {
     if (autocheck == 0) {
@@ -45,8 +46,65 @@ function add() {
     document.getElementById("test2").focus()
     toohigh();
     win();
-    Achevements();
+    temp();
 }
+// function temp() {
+//     alert("You have " + (score) + " points!");
+// }
+
+// const TARGET_FPS = 30;
+
+// function fpsCounter() {
+
+//   // Track frames and time
+//   let frames = 0;
+//   let currentTime = Date.now();
+//   let previousTime = currentTime;
+
+//   // Update on each frame
+//   function update() {
+
+//     let currentTime = Date.now();
+//     let elapsed = currentTime - previousTime;
+
+//     if(elapsed < 1000/TARGET_FPS) {
+//       return;
+//     }
+
+//     // Get current time
+//     currentTime = Date.now();
+
+//     // Calculate delta time
+//     let deltaTime = currentTime - previousTime;
+
+//     // Update previous time for next frame
+//     previousTime = currentTime;
+
+//     // Increment frames count
+//     frames++;
+
+//     // Calculate FPS
+//     let fps = 1000 / deltaTime;
+
+//     // Log/show FPS
+//     console.log(fps);
+//     document.getElementById("fps").innerHTML = (fps);
+
+//     // Request next frame
+//     requestAnimationFrame(update, 1000/30);
+
+//   }
+
+//   // Start counting
+//   update();
+
+// }
+
+  
+// // Start FPS counter
+// fpsCounter();
+
+
 let pin
 function bypass() {
     let pin = prompt("What is the pin?");
@@ -161,11 +219,17 @@ function autoupgrade() {
 let autostop = 1;
 
 function clicker() {
-    score += autou;
-    document.getElementById("score").innerHTML = (score);
-    localStorage.setItem("score", score.toString());
-    localStorage.setItem("autou", autou.toString());
+  score += autou;
+
+  localStorage.setItem(
+    "score", score.toString(),
+    "autou", autou.toString()
+  );
+
+  document.getElementById("score").innerHTML = score;
 }
+let scoreEl = document.getElementById("score");
+
 function auto() {
     autoint = setInterval(clicker, 1000);
 }
@@ -261,4 +325,10 @@ function devwork() {
     } else {
         alert("Try Again");
     }
+}
+//function to detect if it is the players first time playing
+if (start == 0) {
+    alert("Welcome to Clicker Game! Click OK to continue");
+    start = 1;
+    localStorage.setItem("start", start.toString());
 }

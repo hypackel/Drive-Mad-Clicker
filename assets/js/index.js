@@ -118,7 +118,7 @@ function upgrade1() {
 }
 //End goal/Win Condition
 function win() {
-    if (score >= 500000) {
+    if (score >= "500000" && NoWin == "1") {
         alert("You Won!");
         score -= upgrade;
         localStorage.setItem("upgrade", upgrade.toString());
@@ -257,22 +257,20 @@ window.onclick = function(event) {
     }
 }
 let pinthingy
-function devtest() {
-    if (pinthingy == 1234) {
-        devwork();
-    } else {
-        pinthingy = prompt("What is the Pin?");
-        devwork();
-    }
-}
+// function devtest() {
+//     if (pinthingy == 1234) {
+//         devwork();
+//     } else {
+//         pinthingy = prompt("What is the Pin?");
+//         devwork();
+//     }
+// }
 
 function devwork() {
     if (pinthingy == 1234) {
         score += 10000;
         document.getElementById("score").innerHTML = (score);
         localStorage.setItem("score", score.toString());
-    } else {
-        alert("Try Again");
     }
 }
 // function to detect if it is the players first time playing
@@ -299,3 +297,21 @@ function clearFields() {
     document.getElementById("username").value = "";
     document.getElementById("password").value = "";
   }
+
+function UpgradeChange() {
+    if ( pinthingy == 1234) {
+        let UpgradeChange = prompt("What do you want your upgrade to be?");
+        upgrade = UpgradeChange;
+        // localStorage.setItem("upgrade", upgrade.toString());
+        localStorage.setItem("upgrade", upgrade.toString());
+        location.reload();
+    }
+}
+
+let NoWin = 1
+function disableWin() {
+    if ( pinthingy == 1234) {
+        NoWin = 2;
+        alert("Winning Has Been Disabled");
+    }
+}

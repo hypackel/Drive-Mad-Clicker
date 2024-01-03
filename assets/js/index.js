@@ -288,7 +288,14 @@ function UserLogin() {
     if (username == "Dev1" && password == "1234") {
         alert("Dev Mode Enabled!");
         pinthingy = 1234;
+        clearFields();
     } else {
         alert("Wrong Username or Password");
+        clearFields();
     }
 }
+
+function clearFields() {
+    document.getElementById("username").value = "";
+    document.getElementById("password").value = "";
+  }

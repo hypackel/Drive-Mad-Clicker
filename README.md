@@ -1,6 +1,6 @@
 # Drive Mad Clicker
 
-Hypackel and   vjay trash were on an adventure. They were bored walking through the forest. Then Hypackel came up with a great idea, Make a drive mad clicker. This kid named   Insert Name Her agreed and the work began.  vjay worked countless hours and days to produce the first working prototype.
+Coming Soon!
 
 ## Dependencies
 

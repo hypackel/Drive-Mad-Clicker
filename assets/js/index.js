@@ -275,9 +275,20 @@ function devwork() {
         alert("Try Again");
     }
 }
-//function to detect if it is the players first time playing
-if (start == 0) {
-    alert("Welcome to Clicker Game! Click OK to continue");
-    start = 1;
-    localStorage.setItem("start", start.toString());
+// function to detect if it is the players first time playing
+// if (start == 0) {
+//     alert("Welcome to Clicker Game! Click OK to continue");
+//     start = 1;
+//     localStorage.setItem("start", start.toString());
+// }
+
+function UserLogin() {
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    if (username == "Dev1" && password == "1234") {
+        alert("Dev Mode Enabled!");
+        pinthingy = 1234;
+    } else {
+        alert("Wrong Username or Password");
+    }
 }

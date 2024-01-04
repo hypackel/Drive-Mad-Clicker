@@ -6,6 +6,7 @@ function onCheat(newVal) {
     localStorage.setItem("cheat", cheat.toString())
 }
 window.onload = function () {
+    t2check = localStorage.getItem("t2check") ? parseInt(localStorage.getItem("t2check")) : 0;
     acheve2 = localStorage.getItem("acheve2") ? parseInt(localStorage.getItem("acheve2")) : 0;
     acheve1 = localStorage.getItem("acheve1") ? parseInt(localStorage.getItem("acheve1")) : 0;
     autocheck = localStorage.getItem("autocheck") ? parseInt(localStorage.getItem("autocheck")) : 0;
@@ -40,6 +41,7 @@ function autostopwork() {
     }
 }
 function add() {
+    document.getElementById("bonk").play();
     score += upgrade;
     document.getElementById("score").innerHTML = (score);
     localStorage.setItem("score", score.toString());
@@ -48,6 +50,9 @@ function add() {
     win();
     temp();
 }
+
+
+
 // function temp() {
 //     alert("You have " + (score) + " points!");
 // }
@@ -185,6 +190,52 @@ function auto() {
 
 function stop() {
     clearInterval(autoint);
+
+}
+//Tier 2 autoclick system
+function Clicker2() {
+    score += 50;
+  
+    localStorage.setItem(
+      "score", score.toString(),
+    );
+  
+    document.getElementById("score").innerHTML = score;
+  }
+  let scoreET = document.getElementById("score");
+  
+  function T2Auto() {
+    if (t2)
+      T2auto = setInterval(Clicker2, 1000);
+  }
+  
+  function T2Stop() {
+      clearInterval(T2auto);
+  }
+
+  let t2 = 0;
+  let t2check = 0;
+  function abuyT2() {
+    if (score >= 50000) {
+        if (t2check == 0) {
+            t2++;
+            t2check = 1;
+            T2Auto();
+            score -= 50000;
+            localStorage.setItem(
+                "score", score.toString(),
+                "t2check", autou.toString()
+              );
+        } else if (t2check >= 1){
+            alert("You can only buy this once");
+            localStorage.setItem(
+                "score", score.toString(),
+                "t2check", autou.toString()
+              );
+        }
+    } else {
+        alert("Not Enough Money");
+    }
 }
 
 //Alert/Achevement System
@@ -312,6 +363,7 @@ let NoWin = 1
 function disableWin() {
     if ( pinthingy == 1234) {
         NoWin = 2;
-        alert("Winning Has Been Disabled");
+        alert("Winning Has Been Temporarily Disabled");
     }
 }
+

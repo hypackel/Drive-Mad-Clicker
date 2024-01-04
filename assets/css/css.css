@@ -108,19 +108,24 @@ body {
 }
 
 .button {
-  height: 15rem;
-  width: 20rem;
+  width: 25rem;
   background-color: rgb(122, 122, 122);
 }
 
-.button:hover {
-  height: 15.2rem;
-  width: 20.2rem;
-  background-color: rgb(110, 109, 109);
+.buttonimg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 26rem;
+  background-color:  rgb(145, 145, 145);
 }
 
-.buttonimg {
-  height: 200px;
+.buttonimg:active {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 24rem;
+  padding-bottom: 1.1rem;
 }
 
 .scorebox {

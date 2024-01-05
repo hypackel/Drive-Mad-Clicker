@@ -232,7 +232,8 @@ function test3() {
                 "t2check", t2check.toString(),
                 "t2", t2.toString(),
               );
-        } else {    );
+        } else {    
+            alert("Test");
         }
     }
 }

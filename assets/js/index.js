@@ -6,6 +6,7 @@ function onCheat(newVal) {
     localStorage.setItem("cheat", cheat.toString())
 }
 window.onload = function () {
+    t2 = localStorage.getItem("t2") ? parseInt(localStorage.getItem("t2")) : 0;
     t2check = localStorage.getItem("t2check") ? parseInt(localStorage.getItem("t2check")) : 0;
     acheve2 = localStorage.getItem("acheve2") ? parseInt(localStorage.getItem("acheve2")) : 0;
     acheve1 = localStorage.getItem("acheve1") ? parseInt(localStorage.getItem("acheve1")) : 0;
@@ -28,7 +29,7 @@ window.onload = function () {
     })
     autostopwork();
     // achevement();
-    updateFPS();
+    T2Auto()
 }
 function autostopwork() {
     if (autocheck == 0) {
@@ -193,6 +194,7 @@ function stop() {
 
 }
 //Tier 2 autoclick system
+let t2 = 0;
 function Clicker2() {
     score += 50;
   
@@ -205,7 +207,7 @@ function Clicker2() {
   let scoreET = document.getElementById("score");
   
   function T2Auto() {
-    if (t2)
+    if (t2 == 1)
       T2auto = setInterval(Clicker2, 1000);
   }
   
@@ -213,7 +215,10 @@ function Clicker2() {
       clearInterval(T2auto);
   }
 
-  let t2 = 0;
+function test3() {
+    alert(t2);
+}
+
   let t2check = 0;
   function abuyT2() {
     if (score >= 50000) {
@@ -224,17 +229,11 @@ function Clicker2() {
             score -= 50000;
             localStorage.setItem(
                 "score", score.toString(),
-                "t2check", autou.toString()
+                "t2check", t2check.toString(),
+                "t2", t2.toString(),
               );
-        } else if (t2check >= 1){
-            alert("You can only buy this once");
-            localStorage.setItem(
-                "score", score.toString(),
-                "t2check", autou.toString()
-              );
+        } else {    );
         }
-    } else {
-        alert("Not Enough Money");
     }
 }
 

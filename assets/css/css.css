@@ -127,6 +127,13 @@ body {
   width: 24rem;
   padding-bottom: 1.1rem;
 }
+body {
+  background-color:  rgb(145, 145, 145);
+}
+
+html {
+  background-color:  rgb(145, 145, 145);
+}
 
 .scorebox {
   height: 10rem;
@@ -136,7 +143,7 @@ body {
 
 .main {
   text-align: center;
-  padding: auto;
+  background-color:  rgb(145, 145, 145);
 }
 
 .upgrade {
@@ -159,6 +166,11 @@ body {font-family: Arial;}
   background-color: #f1f1f1;
   text-align: center;
   align-items: center;
+}
+
+.slot {
+  text-decoration: none;
+  color: black;
 }
 
 .tab button {

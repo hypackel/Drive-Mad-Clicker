@@ -194,49 +194,49 @@ function stop() {
 
 }
 //Tier 2 autoclick system
-let t2 = 0;
-function Clicker2() {
-    score += 50;
+// let t2 = 0;
+// function Clicker2() {
+//     score += 50;
   
-    localStorage.setItem(
-      "score", score.toString(),
-    );
+//     localStorage.setItem(
+//       "score", score.toString(),
+//     );
   
-    document.getElementById("score").innerHTML = score;
-  }
-  let scoreET = document.getElementById("score");
+//     document.getElementById("score").innerHTML = score;
+//   }
+//   let scoreET = document.getElementById("score");
   
-  function T2Auto() {
-    if (t2 == 1)
-      T2auto = setInterval(Clicker2, 1000);
-  }
+//   function T2Auto() {
+//     if (t2 == 1)
+//       T2auto = setInterval(Clicker2, 1000);
+//   }
   
-  function T2Stop() {
-      clearInterval(T2auto);
-  }
+//   function T2Stop() {
+//       clearInterval(T2auto);
+//   }
 
-function test3() {
-    alert(t2);
-}
+// function test3() {
+//     alert(t2);
+// }
 
-  let t2check = 0;
-  function abuyT2() {
-    if (score >= 50000) {
-        if (t2check == 0) {
-            t2++;
-            t2check = 1;
-            T2Auto();
-            score -= 50000;
-            localStorage.setItem(
-                "score", score.toString(),
-                "t2check", t2check.toString(),
-                "t2", t2.toString(),
-              );
-        } else {    
-            alert("Test");
-        }
-    }
-}
+//   let t2check = 0;
+//   function abuyT2() {
+//     if (score >= 50000) {
+//         if (t2check == 0) {
+//             t2++;
+//             t2check = 1;
+//             T2Auto();
+//             score -= 50000;
+//             localStorage.setItem(
+//                 "score", score.toString(),
+//                 "t2check", t2check.toString(),
+//                 "t2", t2.toString(),
+//               );
+//         } else {    
+//             alert("Test");
+//         }
+//     }
+// }
 
 //Alert/Achevement System
 let acheve1 = 1;
@@ -367,3 +367,19 @@ function disableWin() {
     }
 }
 
+//Daily Missions/Missions
+// function missions() {
+
+// }
+
+//Example Code
+// if (acheve2 == 1) {
+//     showAlert();
+//     document.getElementById("alert-content").innerHTML = ("Achevement Gained: Buy an Autoclicker");
+//     score += 100;
+//     document.getElementById("score").innerHTML = (score);
+//     localStorage.setItem("score", score.toString());
+//     acheve2 += 1;
+//     localStorage.setItem("acheve2", acheve2.toString());
+//     console.log("Achevement 2 gained");
+// }

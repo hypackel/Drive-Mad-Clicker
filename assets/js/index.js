@@ -359,6 +359,15 @@ function UpgradeChange() {
     }
 }
 
+function AutoUpgradeChange() {
+    if ( pinthingy == 1234) {
+        let AutoUpgradeChange = prompt("What do you want your autoclicker upgrade to be?");
+        autou = AutoUpgradeChange;
+        localStorage.setItem("autou", autou.toString());
+        location.reload();
+    }
+}
+
 let NoWin = 1
 function disableWin() {
     if ( pinthingy == 1234) {

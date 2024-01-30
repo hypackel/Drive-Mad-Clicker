@@ -124,7 +124,7 @@ function upgrade1() {
 }
 //End goal/Win Condition
 function win() {
-    if (score >= "500000" && NoWin == "1") {
+    if (score >= "50000000" && NoWin == "1") {
         alert("You Won!");
         score -= upgrade;
         localStorage.setItem("upgrade", upgrade.toString());
@@ -318,11 +318,9 @@ let pinthingy
 // }
 
 function devwork() {
-    if (pinthingy == 1234) {
         score += 10000;
         document.getElementById("score").innerHTML = (score);
         localStorage.setItem("score", score.toString());
-    }
 }
 // function to detect if it is the players first time playing
 // if (start == 0) {
@@ -331,18 +329,18 @@ function devwork() {
 //     localStorage.setItem("start", start.toString());
 // }
 
-function UserLogin() {
-    var username = document.getElementById("username").value;
-    var password = document.getElementById("password").value;
-    if (username == "Dev1" && password == "1234") {
-        alert("Dev Mode Enabled!");
-        pinthingy = 1234;
-        clearFields();
-    } else {
-        alert("Wrong Username or Password");
-        clearFields();
-    }
-}
+// function UserLogin() {
+//     var username = document.getElementById("username").value;
+//     var password = document.getElementById("password").value;
+//     if (username == "Dev1" && password == "1234") {
+//         alert("Dev Mode Enabled!");
+//         pinthingy = 1234;
+//         clearFields();
+//     } else {
+//         alert("Wrong Username or Password");
+//         clearFields();
+//     }
+// }
 
 function clearFields() {
     document.getElementById("username").value = "";
@@ -350,31 +348,29 @@ function clearFields() {
   }
 
 function UpgradeChange() {
-    if ( pinthingy == 1234) {
         let UpgradeChange = prompt("What do you want your upgrade to be?");
         upgrade = UpgradeChange;
         // localStorage.setItem("upgrade", upgrade.toString());
         localStorage.setItem("upgrade", upgrade.toString());
         location.reload();
-    }
 }
 
 function AutoUpgradeChange() {
-    if ( pinthingy == 1234) {
-        let AutoUpgradeChange = prompt("What do you want your autoclicker upgrade to be?");
-        autou = AutoUpgradeChange;
+        let change = prompt("What do you want your autoclicker upgrade to be?");
+        autou = change;
+        stop();
         localStorage.setItem("autou", autou.toString());
         location.reload();
-    }
+        auto();
 }
 
-let NoWin = 1
-function disableWin() {
-    if ( pinthingy == 1234) {
-        NoWin = 2;
-        alert("Winning Has Been Temporarily Disabled");
-    }
-}
+// let NoWin = 1
+// function disableWin() {
+//     if ( pinthingy == 1234) {
+//         NoWin = 2;
+//         alert("Winning Has Been Temporarily Disabled");
+//     }
+// }
 
 //Daily Missions/Missions
 // function missions() {

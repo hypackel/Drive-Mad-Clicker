@@ -116,7 +116,7 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 26rem;
+  width: 25.5rem;
   background-color:  rgb(145, 145, 145);
 }
 
@@ -124,8 +124,8 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 24rem;
-  padding-bottom: 1.1rem;
+  width: 22.5rem;
+  padding-bottom: 1.65rem;
 }
 body {
   background-color:  rgb(145, 145, 145);
@@ -133,6 +133,7 @@ body {
 
 html {
   background-color:  rgb(145, 145, 145);
+  height: 100%;
 }
 
 .scorebox {
@@ -240,4 +241,26 @@ body {font-family: Arial;}
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+.right {
+  float: right;
+  width: 70%;
+  text-align: left;
+  overflow-y: auto;
+  height: 100%;
+}
+
+.left {
+  float: left;
+  width: 30%;
+  text-align: center;
+}
+
+.bighr {
+  height: 10rem;
+  color: black;
+  background-color: black;
+  background: black;
+  overflow-y: auto;
 }

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drive Mad Clicker</title>
+    <link rel="stylesheet" href="assets/css/css.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="main">
+        <div class="right">
+            <!-- <h1>Right</h1> -->
+                    <center>
+                        <h3>Store</h3>
+                        <button style="width: 30vw;" class="btn btn-primary" onclick="reset()">Reset (Warning Resets your Game)</button>
+                    </center>
+                    <br>
+                    <center>
+                        <button style="width: 30vw;" class="btn btn-secondary" onclick="upgrade1()">Buy a Click Upgrade (100 Units)</button>
+                    </center>
+                    <br>
+                    <center>
+                        <button style="width: 30vw;" class="btn btn-secondary" onclick="abuy()">Buy a Autoclicker (1000 Units)</button>
+                    </center>
+                    <br>
+                    <center>
+                        <button style="width: 30vw;" class="btn btn-secondary" onclick="autoupgrade()">Upgrade your Autoclicker (10000 Units)</button>
+                    </center>
+                    <br>
+                    <!-- <center>
+                        <button style="width: 30vw;" class="btn btn-secondary" onclick="abuyT2()">Buy a Tier 2 Autoclicker (50000 Units)</button>
+                    </center>
+                    <br>
+                    <center>
+                        <button style="width: 30vw;" class="btn btn-secondary">Upgrade your Tier 2 Autoclicker (100000 Units)</button>
+                    </center>
+                    <br> -->
+                    <center><button style="width: 30vw;" class="text-center btn btn-warning" onclick="htm()">Buy Premium ONLY <span style="font-size: 3vh;color: red; "> $2.99</span></button></center>
+                    <p class="mumbojumbo">Not Including Tax, and Other Fees</p>
+                    <center>
+                        <h3>Dev Tools</h3>
+                        <br>
+                        <!-- <form>
+                            <input type="password" id="username">
+                            <br>
+                            <br>
+                            <input id="password" type="password">
+                            <input type="submit" >
+                        </form>
+                        <br>
+                        <button style="width: 15rem;" class="btn btn-primary" onclick="UserLogin()">Login</button> -->
+                        <!-- <br>
+                        <br> -->
+                        <button style="width: 15rem;" class="btn btn-secondary"  onclick="devwork()">Score +10000</button>
+                        <button style="width: 15rem;" class="btn btn-secondary" onclick="UpgradeChange()">Change your Upgrade Value</button>
+                        <button style="width: 15rem;" class="btn btn-secondary" onclick="AutoUpgradeChange()">Change your Autoclicker</button>
+                        <br>
+                        <br>
+                        <!-- <button style="width: 15rem;" class="btn btn-warning" onclick=" disableWin()">Disable Winning</button> -->
+                    </center>
+        </div>
+        <div class="left">
+            <img src="assets/img/Click.png" class="buttonimg" onclick="add()">
+            <audio class="sound" id="bonk" src="assets/Sound/bonk.mp3" preload="auto"></audio>
+            <br>
+            <script src="assets/js/Extras.js"></script>
+            <center>
+                <p id="score" class="scorebox"></p>
+            </center>        
+            <!-- <br class="bighr"> -->
+        </div>
+    </div>
+    <script src="assets/js/index.js"></script>
+</body>
+</html>
